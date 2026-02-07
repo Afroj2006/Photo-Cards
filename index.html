@@ -78,7 +78,6 @@
           <a href="#"><i class="fa-brands fa-facebook"></i></i></a>
           <a href="#"><i class="fa-brands fa-twitter"></i></a>
           <a href="#"><i class="fa-brands fa-instagram"></i></i></a>
-          <a href="#"><i class="fa-brands fa-youtube"></i></a>
         </ul>
       </div>
     </div>
@@ -131,6 +130,12 @@
       const galleryBtn = document.getElementById("galleryBtn");
       const gallery = document.getElementById("gallery");
       const sidebarCheck = document.getElementById("check");
+      const menuBtn = document.querySelector(".btn_one label");
+      const home = document.getElementById("home");
+
+      menuBtn.addEventListener("click", () => {
+        home.style.display = "none";
+      });
 
       galleryBtn.addEventListener("click", (e) => {
         e.preventDefault();
@@ -138,9 +143,11 @@
         gallery.classList.toggle("active");
         home.classList.toggle("hide"); 
         sidebarCheck.checked = false;
+
+      
       });
     </script>
-
+  
 
 
 

@@ -1,3 +1,9 @@
+
+html, body {
+  background: rgb(68, 68, 68);
+  min-height: 100%;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -7,9 +13,11 @@
 
 .main_box{
     background: url(photo.jpg);
-    height: 100vh;
+    min-height: 120vh;
     background-size: cover;
-    flex-wrap: nowrap;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 
@@ -55,6 +63,17 @@
   .home p {
     font-size: 1rem;
   }
+  .img{
+    transform: none;
+    display: block;
+    left: 20%;
+    
+  }
+  #gallery.active .img {
+    transform: translateX(-46%);
+  }
+
+  
 }
 
 
@@ -74,7 +93,7 @@
     position: fixed;
     left: -300px;
     height: 100vh;
-    width: 300px;
+    width: 150px;
     background-color: rgba(255, 255 , 255, 0.1);
     box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
     transition: all 0.3s linear;
@@ -94,7 +113,7 @@
 
 .sidebar_menu .logo a{
     position: absolute;
-    left: 50px;
+    left: 9px;
     color: white;
     text-decoration: none;
     font-size: 20px;
@@ -107,7 +126,7 @@
     font-size: 25px;
     line-height: 60px;
     position: absolute;
-    left: 275px;
+    left: 126px;
     opacity: 0;
     cursor: pointer;
     transition: all 0.3s linear;
@@ -131,7 +150,7 @@
 .sidebar_menu .menu i,a{
     color: white;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .sidebar_menu .menu i{
@@ -217,6 +236,7 @@
   gap: inherit;
   z-index: 100000;
 transform: translate(-60%,15%);
+left: 40%;
 
 }
 .card {
@@ -256,14 +276,13 @@ transform: translate(-60%,15%);
 
 @media (max-width: 900px) {
   #gallery.active .img {
-    grid-template-columns: repeat(2, 1fr);
+    /* grid-template-columns: repeat(2, 1fr); */
     max-width: 700px;
   }
-  .main_box{
-    background: url(photo.jpg);
-    
-    background-size: cover;
-}
+  .img{
+    transform: none;
+  }
+ 
 }
 
 
@@ -272,16 +291,13 @@ transform: translate(-60%,15%);
     grid-template-columns: 1fr;
     max-width: 100%;
   }
-  .img{
-    transform: translate(-60%,0);
-  }
+  
   .card {
     max-width: 90%;
   }
+  .img{
+    transform: none;
+  }
+  
 
-   .main_box{
-    background: url(photo.jpg);
-   
-    background-size: cover;
-}
-}
+}  
