@@ -120,20 +120,22 @@
 </section>
 
 
-  <script>
+<script>
   const galleryBtn = document.getElementById("galleryBtn");
-  const gallerySection = document.getElementById("gallery");
+  const gallery = document.getElementById("gallery");
+  const sidebarCheck = document.getElementById("check");
 
-  galleryBtn.addEventListener("click", function (e) {
-    e.preventDefault(); 
+  galleryBtn.addEventListener("click", (e) => {
+    e.preventDefault();
 
-    if (gallerySection.style.display === "block") {
-      gallerySection.style.display = "none";
-    } else {
-      gallerySection.style.display = "grid";
-    }
+    gallery.classList.toggle("active");
+    sidebarCheck.checked = false;
   });
 </script>
+
+
+
+
 
   </body>
 </html>
