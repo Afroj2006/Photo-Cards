@@ -9,7 +9,54 @@
     background: url(photo.jpg);
     height: 100vh;
     background-size: cover;
+    flex-wrap: nowrap;
 }
+
+
+.home {
+    position: relative;
+  z-index: 1;          /* stays behind sidebar */
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  color: white;
+  backdrop-filter: blur(2px);
+  pointer-events: none;
+}
+.home.hide {
+  display: none;
+}
+.home h1 {
+  font-size: 3rem;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.home p {
+  font-size: 1.2rem;
+  opacity: 0.85;
+}
+
+.home.hide {
+  display: none;
+}
+
+
+@media (max-width: 600px) {
+  .home h1 {
+    font-size: 2rem;
+  }
+
+  .home p {
+    font-size: 1rem;
+  }
+}
+
 
 .btn_one i{
     color: white;
@@ -20,6 +67,7 @@
     line-height: 60px;
     cursor:  pointer;
     transition: all 0.3s linear;
+    z-index: 11;
 }
 
 .sidebar_menu{
@@ -30,6 +78,7 @@
     background-color: rgba(255, 255 , 255, 0.1);
     box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
     transition: all 0.3s linear;
+    z-index: 1000; 
 
 }
 
@@ -39,6 +88,7 @@
     line-height: 60px;
     box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
     height: 60px;
+    z-index: 1000;
 
 }
 
@@ -49,6 +99,7 @@
     text-decoration: none;
     font-size: 20px;
     font-weight: 500;
+    z-index: 1000;
 }
 
 .sidebar_menu .btn_two i{
@@ -60,6 +111,7 @@
     opacity: 0;
     cursor: pointer;
     transition: all 0.3s linear;
+    z-index: 1000;
 }
 
 .sidebar_menu .menu{
@@ -67,11 +119,13 @@
     position: absolute;
     width: 100%;
     top: 80px;
+    z-index: 1000;
 }
 
 .sidebar_menu .menu li{
     margin-top: 6px;
     padding: 15px 20px;
+    z-index: 1000;
 }
 
 .sidebar_menu .menu i,a{
@@ -161,6 +215,7 @@
   display: grid;
   grid-template-columns: inherit;
   gap: inherit;
+  z-index: 100000;
 transform: translate(-60%,15%);
 
 }
